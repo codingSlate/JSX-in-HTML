@@ -8,7 +8,7 @@
   </head>
   <body>
     <h4>Reausable with reusable Component</h4>
-    <p>Props Drilling - solution</p>
+    <p>Props Drilling - the "text" is passing through "Section" component thus it is not ideal, because for Section props text is not needed </p>
 
     <div id="root"></div>
     <script
@@ -23,23 +23,17 @@
     <script type="text/babel">
       const Paragraph = ({ text }) => <p>{text}</p>;
 
-      const Section = ({ headingText, children }) => (
+      const Section = ({ headingText, text }) => (
         <section>
           <h1>{headingText}</h1>
-          {children}
+          <Paragraph text={text} />
         </section>
       );
 
-      // create wrapper
-      const SectionBlock = () => (
-        <Section headingText="I am a heading">
-          <Paragraph text="i am a paragraph" />
-          <div>Some more content</div>
-          <Paragraph text="i am another  paragraph" />
-        </Section>
+      ReactDOM.render(
+        <Section headingText="I am a heading" text="i am a paragraph" />,
+        document.getElementById('root')
       );
-
-      ReactDOM.render(<SectionBlock />, document.getElementById('root'));
     </script>
   </body>
 </html>

@@ -7,8 +7,7 @@
     <title>Document</title>
   </head>
   <body>
-    <h4>Reausable with reusable Component</h4>
-    <p>Props Drilling - solution</p>
+    <h4>Reausable with Component it is not reusable</h4>
 
     <div id="root"></div>
     <script
@@ -23,23 +22,17 @@
     <script type="text/babel">
       const Paragraph = ({ text }) => <p>{text}</p>;
 
-      const Section = ({ headingText, children }) => (
+      const Section = ({ headingText }) => (
         <section>
           <h1>{headingText}</h1>
-          {children}
+          <Paragraph text="I am paragraph" />
         </section>
       );
 
-      // create wrapper
-      const SectionBlock = () => (
-        <Section headingText="I am a heading">
-          <Paragraph text="i am a paragraph" />
-          <div>Some more content</div>
-          <Paragraph text="i am another  paragraph" />
-        </Section>
+      ReactDOM.render(
+        <Section headingText="I am a heading" />,
+        document.getElementById('root')
       );
-
-      ReactDOM.render(<SectionBlock />, document.getElementById('root'));
     </script>
   </body>
 </html>
