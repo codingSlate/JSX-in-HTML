@@ -20,14 +20,17 @@
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
+      const paragraph = ({ text }) => <p>{text}</p>;
+
       const Section = ({ headingText }) => (
         <section>
           <h1>{headingText}</h1>
+          <paragraph text="I am paragraph" />
         </section>
       );
 
       ReactDOM.render(
-        <section headingText="I am a heading" />,
+        <Section headingText="I am a heading" />,
         document.getElementById('root')
       );
     </script>
