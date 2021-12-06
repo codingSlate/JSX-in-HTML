@@ -7,10 +7,33 @@
     <title>Document</title>
   </head>
   <body>
-  <h4>JSX Function return types</h4>
+    <h4>JSX Function return types</h4>
 
+    <div id="root"></div>
 
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const getText = (aText) => `I am a text ${aText}`;
+      const getCalc = (a, b) => a * b;
+      const getObj = (price) => ({ model: 'Tyoto', color: 'cream', price });
 
-  
+      const container = (
+        <div>
+          {getText('Hello')} <br />
+          {getCalc(10, 20)} <br />
+          {JSON.stringify(getObj(900))}
+        </div>
+      );
+
+      ReactDOM.render(container, document.getElementById('root'));
+    </script>
   </body>
 </html>
