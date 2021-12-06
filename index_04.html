@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rendering React with JSX</title>
+  </head>
+  <body>
+    <h4>JS and JSX propertis</h4>
+    <p>Only aria-label is same</p>
+
+    <label for="name1">Name</label>
+    <input
+      type="text"
+      maxlength="10"
+      class="input"
+      id="name1"
+      aria-label="i am input"
+    />
+    <hr />
+    <div id="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const input = (
+        <React.Fragment>
+          <label htmlFor="name">Name </label>
+          <input
+            type="text"
+            maxLength="10"
+            className="input"
+            id="name"
+            aria-label="i am input"
+          />
+        </React.Fragment>
+      );
+
+      ReactDOM.render(input, document.getElementById('root'));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rendering React JS</title>
+  </head>
+  <body>
+    <h4>Rendering element using React</h4>
+    <div id="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+    ></script>
+    <script type="text/javascript">
+      // React.createElement(type, [props], [...anynumber of children])
+
+      const paragraph = React.createElement("p", null, "I am paragraph");
+      const section = React.createElement(
+        "section",
+        null,
+        "I am section\n",
+        paragraph
+      );
+      const header = React.createElement("header", null, "I am header");
+      const footer = React.createElement(
+        "footer",
+        { class: "footer" },
+        "i am footer"
+      );
+      const main = React.createElement(
+        "main",
+        { class: "header" },
+        header,
+        section,
+        footer
+      );
+
+      // ReactDOM.render(element, container to render element into )
+      ReactDOM.render(main, document.getElementById("root"));
+    </script>
+  </body>
+</html>

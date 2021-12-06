@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rendering React with JSX</title>
+    <style>
+      .my-color {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h4>JSX interpolated text</h4>
+    <p>
+      JSX is capable of creating new template, use of statement, expression,
+      functions,conditional statement,
+    </p>
+
+    <div id="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const sometext = 'I am some text';
+      const coloClass = 'my-color';
+      const paragraph = (
+        <p className={coloClass}>I am paragraph with {sometext} </p>
+      );
+      ReactDOM.render(paragraph, document.getElementById('root'));
+    </script>
+  </body>
+</html>
