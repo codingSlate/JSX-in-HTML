@@ -22,7 +22,11 @@
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-      const Paragraph = (props) => <p>My name is {props.name}</p>;
+      // const Paragraph = (props) => <p>My name is {props.name}</p>;
+      // or using
+      // object destructure if ES6
+      const Paragraph = ({ name }) => <p>My name is {name}</p>;
+
       const Container = (
         <div>
           <Paragraph name="Kumar" />
