@@ -24,12 +24,15 @@
       const getText = (aText) => `I am a text ${aText}`;
       const getCalc = (a, b) => a * b;
       const getObj = (price) => ({ model: 'Tyoto', color: 'cream', price });
+      const getElem = () => <span>Hey</span> 
+
 
       const container = (
         <div>
           {getText('Hello')} <br />
           {getCalc(10, 20)} <br />
           {JSON.stringify(getObj(900))}
+          <div>{getElem()}</div>
         </div>
       );
 
