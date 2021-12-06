@@ -20,12 +20,12 @@
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-      const paragraph = ({ text }) => <p>{text}</p>;
+      const Paragraph = ({ text }) => <p>{text}</p>;
 
       const Section = ({ headingText }) => (
         <section>
           <h1>{headingText}</h1>
-          <paragraph text="I am paragraph" />
+          <Paragraph text="I am paragraph" />
         </section>
       );
 
